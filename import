@@ -1,0 +1,4 @@
+docker cp keys/public.gpg gpg-agent:/tmp/public.gpg
+docker exec gpg-agent gpg --homedir /opt/gnupg/.gnupg --import /tmp/public.gpg
+docker cp keys/private.gpg gpg-agent:/tmp/private.gpg
+docker exec -it gpg-agent gpg --homedir /opt/gnupg/.gnupg --import /tmp/private.gpg
